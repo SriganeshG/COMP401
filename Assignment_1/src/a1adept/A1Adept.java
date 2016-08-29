@@ -14,6 +14,7 @@ public class A1Adept {
 	
 	public static void process(Scanner s) {
 		// Put your code here.
+		//testing
 	}
 
 }
