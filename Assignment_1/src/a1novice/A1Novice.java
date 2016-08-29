@@ -3,7 +3,7 @@ package a1novice;
 import java.util.Scanner;
 
 public class A1Novice {
-
+	//testing push from laptop
 	// Do not change the main method.
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
