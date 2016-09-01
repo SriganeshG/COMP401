@@ -13,8 +13,14 @@ public class A1Adept {
 	}
 	
 	public static void process(Scanner s) {
-		// Put your code here.
-		//testing
+		int numAssignments = s.nextInt();
+		for(int i = 0; i < numAssignments; i++){
+			int[] ptsAssignments = new int[numAssignments];
+			ptsAssignments[i] = s.nextInt();
+			System.out.print(ptsAssignments[i]+" ");
+		}
+		int numStudents = s.nextInt();
+		
 	}
 
 }
