@@ -17,11 +17,13 @@ public class A1Adept {
 		String letterGrade = "no grade?";
 		String initial;
 		int numAssignments = s.nextInt();
-		int[] ptsAssignments = new int[numAssignments];
-		int numStudents = s.nextInt();
-		String[] studentRecords = new String[numStudents];
+		double[] ptsAssignments = new double[numAssignments];
+		double totalPtsAss = 0;
+		double donePtsAss = 0;
 		String firstName, lastName;
+		int reci;
 		double reciGrade;
+		
 		double[] grade = new double[numAssignments];
 		double[] assignments = new double[numAssignments];
 		double midterm_1, midterm_2, final_test;
@@ -30,28 +32,35 @@ public class A1Adept {
 			ptsAssignments[i] = s.nextInt();
 			//System.out.print(ptsAssignments[i] + " ");
 		}
-		
+		totalPtsAss = totalArray(ptsAssignments);
+		int numStudents = s.nextInt();
+		String[] studentRecords = new String[numStudents];
 		//runs for each student, calculates their stats
 		for (int i = 0; i < numStudents; i++) {
 			firstName = s.next();
 			initial = firstName.substring(0, 1) + ".";
 			lastName = s.next();
-			reciGrade = (s.nextInt()* 1.0d)/15;
+			reci = s.nextInt();
+			
 			for (int j = 0; j < numAssignments; j++) {
 				assignments[j] = s.nextDouble();
 				//grade[j] = perToGpa(assignments[j], j);
+				/*
 				if(isBetween((assignments[j]/ptsAssignments[j]), .7,.9)){
 					grade[j] = 10*(assignments[j]/ptsAssignments[j]) - 5.5;
 				}else if(isBetween((assignments[j]/ptsAssignments[j]), .4,.7)){
 					grade[j] = 5*(assignments[j]/ptsAssignments[j]) - 2;
 				}
+				*/
 			}
+			donePtsAss = totalArray(assignments);
+			reciGrade = (double) reci / 15.0; 
 			if(isBetween(reciGrade, .7,.9)){
 				reciGrade = 10*(reciGrade) - 5.5;
 			}else if(isBetween((reciGrade), .4,.7)){
 				reciGrade = 5*(reciGrade) - 2;
 			}
-			double gpaAss = averageGPA(grade);
+			double gpaAss = averageArray(grade);
 			midterm_1 = s.nextDouble();
 			midterm_2 = s.nextDouble();
 			final_test = s.nextDouble();
@@ -90,13 +99,20 @@ public class A1Adept {
 	{
 	  return((value > min) && (value < max));
 	}
-	public static double averageGPA(double[] array){
+	public static double averageArray(double[] array){
 		double sum = 0;
 		for(int i = 0; i < array.length; i++){
 			sum = sum + array[i];
 		}
 		double average = sum / array.length;
 		return average;
+	}
+	public static double totalArray(double[] array){
+		double sum = 0;
+		for(int i = 0; i < array.length; i++){
+			sum = sum + array[i];
+		}
+		return sum;
 	}
 
 }
