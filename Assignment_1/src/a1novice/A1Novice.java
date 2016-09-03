@@ -63,9 +63,7 @@ public class A1Novice {
 		for (int i = 0; i < numStudents;i++){
 			System.out.println(studentRecords[i]);
 		}
-
 	}
-	
 	public static boolean isBetween(double value, double min, double max)
 	{
 	  return((value > min) && (value < max));
