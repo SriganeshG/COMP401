@@ -43,27 +43,25 @@ public class A1Adept {
 			initial = firstName.substring(0, 1) + ".";
 			lastName = s.next();
 			reci = s.nextInt();
-			/*
+			
 			for (int j = 0; j < numAssignments; j++) {
 				assignments[j] = s.nextDouble();
-				//grade[j] = perToGpa(assignments[j], j);
-				
+				/*
 				if(isBetween((assignments[j]/ptsAssignments[j]), .7,.9)){
 					grade[j] = 10*(assignments[j]/ptsAssignments[j]) - 5.5;
 				}else if(isBetween((assignments[j]/ptsAssignments[j]), .4,.7)){
 					grade[j] = 5*(assignments[j]/ptsAssignments[j]) - 2;
-				}
-				
-			}*/
+				}*/
+			}
 			donePtsAss = totalArray(assignments);
-			reciGrade = (double) reci / 15.0; 
-			if(isBetween(reciGrade, .7,.9)){
+			reciGrade = (double) reci / 15.0;
+			if(isBetween(reciGrade, .7,1.1)){
 				reciGrade = 10*(reciGrade) - 5.5;
 			}else if(isBetween((reciGrade), .4,.7)){
 				reciGrade = 5*(reciGrade) - 2;
 			}
 			gpaAss = donePtsAss / totalPtsAss;
-			if(isBetween(gpaAss, .7,.9)){
+			if(isBetween(gpaAss, .7,1.1)){
 				gpaAss = 10*(gpaAss) - 5.5;
 			}else if(isBetween((gpaAss), .4,.7)){
 				gpaAss = 5*(gpaAss) - 2;
