@@ -13,7 +13,7 @@ public class A1Jedi {
 	}
 
 	public static void process(Scanner s) {
-		// Put your code here.
+		
 	}
 
 }

@@ -21,12 +21,9 @@ public class A1Adept {
 		double totalPtsAss = 0;
 		double donePtsAss = 0;
 		double gpaAss = 0;
-		double studentPtsAss;
 		String firstName, lastName;
 		int reci;
 		double reciGrade;
-		
-		double[] grade = new double[numAssignments];
 		double[] assignments = new double[numAssignments];
 		double midterm_1, midterm_2, final_test;
 		//assign assignment points to array
