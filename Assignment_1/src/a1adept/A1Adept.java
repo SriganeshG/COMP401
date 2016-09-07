@@ -100,7 +100,7 @@ public class A1Adept {
 	}
 	public static boolean isBetween(double value, double min, double max)
 	{
-	  return((value > min) && (value < max));
+	  return((value >= min) && (value <= max));
 	}
 	
 	public static double averageArray(double[] array){

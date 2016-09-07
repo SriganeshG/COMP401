@@ -66,6 +66,6 @@ public class A1Novice {
 	}
 	public static boolean isBetween(double value, double min, double max)
 	{
-	  return((value > min) && (value < max));
+	  return((value >= min) && (value <= max));
 	}
 }
