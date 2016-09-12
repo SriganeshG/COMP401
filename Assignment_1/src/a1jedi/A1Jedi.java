@@ -129,18 +129,17 @@ public class A1Jedi {
 			System.out.println(studentRecords[i]);
 		}
 		*/
-		System.out.println("A :" + a);
-		System.out.println("A- :" +am);
-		System.out.println("B+ :" +bp);
-		System.out.println("B :"+b);
-		System.out.println("B- :"+bm);
-		System.out.println("C+ :" + cp);
-		System.out.println("C :"+c);
-		System.out.println("C- :"+cm);
-		System.out.println("D+ :" + dp);
-		System.out.println("D :"+d);
-		System.out.println("D- :"+dm);
-		System.out.println("F :"+f);
+		System.out.println("A : " + a);
+		System.out.println("A-: " +am);
+		System.out.println("B+: " +bp);
+		System.out.println("B : "+b);
+		System.out.println("B-: "+bm);
+		System.out.println("C+: " + cp);
+		System.out.println("C : "+c);
+		System.out.println("C-: "+cm);
+		System.out.println("D+: " + dp);
+		System.out.println("D : "+d);
+		System.out.println("F : "+f);
 		
 	}
 	public static boolean isBetween(double value, double min, double max)
