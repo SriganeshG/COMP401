@@ -30,7 +30,7 @@ public class A2Adept {
 				System.out.print("\n");
 				printCount += binWidth;
 			}else{
-				System.out.print(" "+printCount+":");
+				System.out.print(printCount+":");
 				for(int j = 0; j < asterisk; j++){
 					System.out.print("*");
 				}
