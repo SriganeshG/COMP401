@@ -77,7 +77,7 @@ public class A1Jedi {
 		double stdDevMid1 = Math.sqrt(getVariance(rawMid1, avgMid1));
 		double stdDevMid2 = Math.sqrt(getVariance(rawMid2, avgMid2));
 		double stdDevFinal = Math.sqrt(getVariance(rawFinal, avgFinal));
-		int a = 0,am = 0,bp = 0,b = 0,bm = 0,cp = 0,c = 0,cm = 0,dp = 0,d =0,dm = 0,f = 0;
+		int a = 0,am = 0,bp = 0,b = 0,bm = 0,cp = 0,c = 0,cm = 0,dp = 0,d =0,f = 0;
 		double nMid1,nMid2,nFinal;
 		for(int i = 0; i < numStudents; i++){
 			nMid1 = (rawMid1[i] - avgMid1)/stdDevMid1;
