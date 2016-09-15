@@ -28,8 +28,8 @@ public class A2Jedi {
 		}
 		double max = getLargestValD(numStars);
 
-		/*
-		for(double max = getLargestValD(numStars); 0 < getLargestVal(bin); max--){
+		
+		for(max; 0 < getLargestVal(bin); max--){
 			for(int j = 0; j < bin.length; j++){
 				if(bin[j] == 0){
 					System.out.print("*");
@@ -40,9 +40,8 @@ public class A2Jedi {
 			}
 			//System.out.print("test");
 		}
-		*/
 		
-		
+		/*
 		for(int i = 0; i < max;i++){
 			for(int j = 0; j < (numBins);j++){
 				
@@ -54,7 +53,7 @@ public class A2Jedi {
 			}
 			System.out.print("\n");
 		}
-		
+		*/
 		for(int i = 0; i < numBins;i++){
 			System.out.print("-");
 		}
