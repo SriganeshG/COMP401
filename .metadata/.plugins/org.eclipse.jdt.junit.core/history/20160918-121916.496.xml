@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="A3NoviceTest" project="Assignment_3" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="a3test.A3NoviceTest" time="0.0">
+    <testcase name="constructorErrorTest" classname="a3test.A3NoviceTest" time="0.0"/>
+    <testcase name="grayPixelConstructorTest" classname="a3test.A3NoviceTest" time="0.0"/>
+    <testcase name="colorPixelConstructorTest" classname="a3test.A3NoviceTest" time="0.0"/>
+    <testcase name="grayPixelRGBTest" classname="a3test.A3NoviceTest" time="0.0"/>
+    <testcase name="colorPixelGetCharTest" classname="a3test.A3NoviceTest" time="0.0"/>
+    <testcase name="grayPixelGetCharTest" classname="a3test.A3NoviceTest" time="0.0"/>
+    <testcase name="colorPixelIntensityTest" classname="a3test.A3NoviceTest" time="0.0"/>
+  </testsuite>
+</testrun>
