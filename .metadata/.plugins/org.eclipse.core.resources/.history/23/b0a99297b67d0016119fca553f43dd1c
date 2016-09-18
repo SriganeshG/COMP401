@@ -1,0 +1,45 @@
+package a3novice;
+
+public class ColorPixel implements Pixel {
+	private double _red;
+	private double _blue;
+	private double _green;
+	
+	public ColorPixel(double red, double green, double blue){
+		_red = red;
+		_blue = blue;
+		_green = green;
+		
+	}
+
+	@Override
+	public double getRed() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getGreen() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getBlue() {
+		
+		return 0;
+	}
+
+	@Override
+	public double getIntensity() {
+		double intensity = (.299 * getRed()) + (.587* getGreen()) + (.114*getBlue());
+		return intensity;
+	}
+
+	@Override
+	public char getChar() {
+		
+		return 0;
+	}
+
+}
