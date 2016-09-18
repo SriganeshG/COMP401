@@ -88,9 +88,9 @@ public class ColorPixel implements Pixel {
 		if (factor < 0.0 || factor > 1.0) {
 			throw new RuntimeException("factor out of bounds");
 		}
-		double red = (p2.getRed()/getRed())*p2.getRed();
-		double green = (p2.getGreen()/getGreen())*p2.getGreen();
-		double blue = (p2.getBlue()/getBlue())*p2.getBlue();
+		double red = ;
+		double green = (p2.getGreen()/getGreen());
+		double blue = (p2.getBlue()/getBlue());
 		Pixel p3 = new ColorPixel(red, green, blue);
 		return p3;
 	}
