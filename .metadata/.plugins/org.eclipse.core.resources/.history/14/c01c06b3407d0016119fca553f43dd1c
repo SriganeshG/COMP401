@@ -1,0 +1,12 @@
+package a3novice;
+
+public interface A3Novice {
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+
+
+}
