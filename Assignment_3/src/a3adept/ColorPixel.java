@@ -1,9 +1,9 @@
 package a3adept;
 
 public class ColorPixel implements Pixel {
-	private double _red;
-	private double _blue;
-	private double _green;
+	private double _red = .5;
+	private double _blue = .5;
+	private double _green = .5;
 
 	public ColorPixel(double red, double green, double blue) {
 		if (red < 0.0 || red > 1.0) {
@@ -90,7 +90,8 @@ public class ColorPixel implements Pixel {
 		Pixel p2 = blend(p, (1 - factor));
 		return p2;
 	}
-
+	
+	@Override
 	public Pixel darken(double factor) {
 		if (factor < 0.0 || factor > 1.0) {
 			throw new RuntimeException("factor out of bounds");
@@ -101,13 +102,18 @@ public class ColorPixel implements Pixel {
 	}
 
 	public boolean equals(Pixel p) {
+		if(p == null){
+			throw new RuntimeException("p is null");
+		}
 		double intensity = (getIntensity() > p.getIntensity()) ? getIntensity() : p.getIntensity();
-		if ((getRed() / p.getRed()) < (.1 * intensity) && (getGreen() / p.getGreen()) < (.1 * intensity)
-				&& (getBlue() / p.getBlue()) < (.1 * intensity)) {
+
+		if (Math.abs(getRed() - p.getRed()) < (.1 * intensity) && Math.abs(getGreen() - p.getGreen()) < (.1 * intensity)
+				&& Math.abs(getBlue() - p.getBlue()) < (.1 * intensity)) {
 			return true;
 		} else {
 			return false;
 		}
+
 	}
 
 	public static boolean isBetween(double value, double min, double max) {
