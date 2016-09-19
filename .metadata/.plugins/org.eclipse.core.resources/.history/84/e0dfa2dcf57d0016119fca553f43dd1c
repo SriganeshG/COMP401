@@ -83,31 +83,35 @@ public class ColorPixel implements Pixel {
 
 	@Override
 	public Pixel lighten(double factor) {
+		Pixel p = new ColorPixel(1, 1, 1);
+		Pixel p2 = blend(p, factor);
 		if (factor < 0.0 || factor > 1.0) {
 			throw new RuntimeException("factor out of bounds");
 		}
-		Pixel p = new ColorPixel(1.0, 1.0, 1.0);
-		Pixel p2 = blend(p, (1 - factor));
-		return p2;
+		double red = (p2.getRed()/getRed())*p2.getRed();
+		double green = (p2.getGreen()/getGreen())*p2.getGreen();
+		double blue = (p2.getBlue()/getBlue())*p2.getBlue();
+		Pixel p3 = new ColorPixel(red, green, blue);
+		return p3;
 	}
 
 	public Pixel darken(double factor) {
 		if (factor < 0.0 || factor > 1.0) {
 			throw new RuntimeException("factor out of bounds");
 		}
-		Pixel p = new ColorPixel(0.0, 0.0, 0.0);
-		Pixel p2 = blend(p, (1 - factor));
-		return p2;
+		Pixel p = new ColorPixel(getRed(), getGreen(), getBlue());
+		Pixel p2 = blend(p, (1-factor));
+		
+		double red = p2.getRed();
+		double green = p2.getGreen();
+		double blue = p2.getBlue();
+		Pixel p3 = new ColorPixel(red, green, blue);
+		return p3;
 	}
-
-	public boolean equals(Pixel p) {
-		double intensity = (getIntensity() > p.getIntensity()) ? getIntensity() : p.getIntensity();
-		if ((getRed() / p.getRed()) < (.1 * intensity) && (getGreen() / p.getGreen()) < (.1 * intensity)
-				&& (getBlue() / p.getBlue()) < (.1 * intensity)) {
-			return true;
-		} else {
-			return false;
-		}
+	
+	public boolean equals(Pixel p){
+		Pixel p2 = new ColorPixel(getRed(),getGreen(),getBlue());
+		return true;
 	}
 
 	public static boolean isBetween(double value, double min, double max) {

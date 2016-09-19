@@ -9,7 +9,6 @@ public class GrayPixel implements Pixel {
 		if(intensity < 0 || intensity > 1){
 			throw new RuntimeException("Intensity must be between 0 and 1");
 		}
-		s
 		_intensity = intensity;
 		_red = intensity;
 		_blue = intensity;

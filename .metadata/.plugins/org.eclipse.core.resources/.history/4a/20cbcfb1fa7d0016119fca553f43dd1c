@@ -101,9 +101,9 @@ public class ColorPixel implements Pixel {
 	}
 
 	public boolean equals(Pixel p) {
-		double intensity = (getIntensity() > p.getIntensity()) ? getIntensity() : p.getIntensity();
-		if ((getRed() / p.getRed()) < (.1 * intensity) && (getGreen() / p.getGreen()) < (.1 * intensity)
-				&& (getBlue() / p.getBlue()) < (.1 * intensity)) {
+		double intensity = ( getIntensity() > p.getIntensity()) ? getIntensity() : p.getIntensity();
+		if ((getRed() / p.getRed()) < (.1 * intensity) && getGreen() / p.getGreen() < .1 * intensity
+				&& getBlue() / p.getBlue() < .1 * intensity) {
 			return true;
 		} else {
 			return false;
