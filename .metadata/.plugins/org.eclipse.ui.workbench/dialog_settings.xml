@@ -25,6 +25,10 @@
 	<section name="ZipFileImportWizard">
 		<item value="false" key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\Hail Sri\Downloads\a3tests.jar"/>
+			<item value="C:\Users\Hail Sri\Downloads\Lecture06.jar"/>
+			<item value="C:\Users\Hail Sri\Downloads\Lecture07.jar"/>
+			<item value="C:\Users\Hail Sri\Downloads\Lecture04.jar"/>
 			<item value="C:\Users\Hail Sri\Downloads\Rec_3.jar"/>
 		</list>
 	</section>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="A3AdeptTest" project="Assignment_3" tests="10" started="10" failures="0" errors="0" ignored="0">
+  <testsuite name="a3test.A3AdeptTest" time="0.001">
+    <testcase name="pictureGetAndSetBadParameterTest" classname="a3test.A3AdeptTest" time="0.0"/>
+    <testcase name="lightenTest" classname="a3test.A3AdeptTest" time="0.0"/>
+    <testcase name="pictureWidthHeightGettersTest" classname="a3test.A3AdeptTest" time="0.0"/>
+    <testcase name="darkenTest" classname="a3test.A3AdeptTest" time="0.001"/>
+    <testcase name="badParameterTest" classname="a3test.A3AdeptTest" time="0.0"/>
+    <testcase name="pictureGetAndSetPixelTest" classname="a3test.A3AdeptTest" time="0.0"/>
+    <testcase name="pictureConstructorTest" classname="a3test.A3AdeptTest" time="0.0"/>
+    <testcase name="pictureCountRangeTest" classname="a3test.A3AdeptTest" time="0.0"/>
+    <testcase name="equalsTest" classname="a3test.A3AdeptTest" time="0.0"/>
+    <testcase name="blendTest" classname="a3test.A3AdeptTest" time="0.0"/>
+  </testsuite>
+</testrun>
