@@ -85,29 +85,25 @@ public class PictureImpl implements Picture {
 				p2[i][j] = p.getPixel(i, j);
 			}
 		}
-		double total = _height*_width;
-		double diff = 0;
+		double total = 0;
+		double same = 0;
 		for(int i = 0; i < p2.length; i++){
 			for(int j = 0; j < arrPixels[i].length;j++){
-				if(arrPixels[i][j].equals(p2[i][j]) == false){
-					diff++;
+				if(arrPixels[i][j].equals(p2[i][j])){
+					System.out.print("Returned True. \n");
+					
 				}
+				total++;
 			}
 		}
-		return diff/total;
+		System.out.print(same);
+		return same/total;
 	}
 
 	@Override
 	public double calculatePSNR(Picture p) {
 		if(p.getHeight() != _height || p.getWidth() != _width || p == null){
 			throw new RuntimeException("Pictures height and width are not the same.");
-		}
-		int sumSquare = 0;
-		double mse;
-		for(int i = 0; i < _height; i ++){
-			for(int j =0; j< _width; j++){
-				
-			}
 		}
 		return 0;
 	}

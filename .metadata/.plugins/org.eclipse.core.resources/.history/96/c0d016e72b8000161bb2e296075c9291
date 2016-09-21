@@ -102,13 +102,6 @@ public class PictureImpl implements Picture {
 		if(p.getHeight() != _height || p.getWidth() != _width || p == null){
 			throw new RuntimeException("Pictures height and width are not the same.");
 		}
-		int sumSquare = 0;
-		double mse;
-		for(int i = 0; i < _height; i ++){
-			for(int j =0; j< _width; j++){
-				
-			}
-		}
 		return 0;
 	}
 
