@@ -112,15 +112,12 @@ public class PictureImpl implements Picture {
 		double mse;
 		for(int i = 0; i < _height; i ++){
 			for(int j =0; j< _width; j++){
-				double a = arrPixels[i][j].getIntensity();
-				double b = p2[i][j].getIntensity();
-				double diff = a-b;
-				sumSquare += (diff * diff);
+				Pixel a = arrPixels[i][j];
+				Pixel b = p2[i][j];
+				
 			}
 		}
-		mse = sumSquare/ (_height*_width);
-		double psnr = (20*Math.log10(1.0)) - (10*Math.log10(mse));
-		return psnr;
+		return 0;
 	}
 
 }
