@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="A3JediTest" project="Assignment_3" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="a3test.A3JediTest" time="0.0">
+    <testcase name="nullPictureTest" classname="a3test.A3JediTest" time="0.0"/>
+    <testcase name="unequalPixelRatioTest" classname="a3test.A3JediTest" time="0.0"/>
+    <testcase name="psnrTest" classname="a3test.A3JediTest" time="0.0"/>
+    <testcase name="sizeMismatchTest" classname="a3test.A3JediTest" time="0.0"/>
+  </testsuite>
+</testrun>

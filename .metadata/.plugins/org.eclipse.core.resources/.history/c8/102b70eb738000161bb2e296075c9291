@@ -108,7 +108,7 @@ public class PictureImpl implements Picture {
 				p2[i][j] = p.getPixel(i, j);
 			}
 		}
-		double sumSquare = 0;
+		int sumSquare = 0;
 		double mse;
 		for(int i = 0; i < _height; i ++){
 			for(int j =0; j< _width; j++){
