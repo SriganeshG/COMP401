@@ -14,11 +14,6 @@ public class HashMapImpl {
 		 *create a square with name square2, length 5.0, color yellow
 		 */
 		//start code here
-		Shape circle1 = new Circle(2.0,"green");
-		Shape circle2 = new Circle(5.0,"blue");
-		Shape square1 = new Square(6.0,"red");
-		Shape square2 = new Square(5.0,"yellow");
-		
 		
 		
 		/**
@@ -28,10 +23,7 @@ public class HashMapImpl {
 		 * square1 key -> 1
 		 * square2 key -> 2
 		 */
-		map.put(3, circle1);
-		map.put(5, circle2);
-		map.put(1, square1);
-		map.put(2, square2);
+		// start code here
 		
 		
 		
@@ -40,7 +32,5 @@ public class HashMapImpl {
 		 * by calling their toString() method
 		 */
 		//start code here
-		
-		
 	}
 }

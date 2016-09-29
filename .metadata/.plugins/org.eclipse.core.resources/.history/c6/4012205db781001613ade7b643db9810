@@ -25,7 +25,7 @@ public class Square implements Shape{
 	}
 	@Override
 	public double getarea() {
-		double area = sideLength*sideLength;
+		double area = Math.PI * radius *radius;
 		return area;
 	}
 	

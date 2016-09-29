@@ -16,18 +16,17 @@ public class Circle implements Shape{
 	@Override
 	public void fillColor(String color) {
 		// fill the method
-		this.color = color;
 	}
 
 	@Override
 	public String getColor() {
 		//fill the method
-		return color;
+		return null;
 	}
 	@Override
 	public double getarea() {
-		double area = Math.PI * radius * radius;
-		return area;
+		//fill the method
+		return 0;
 	}
 	
 	public String toString(){

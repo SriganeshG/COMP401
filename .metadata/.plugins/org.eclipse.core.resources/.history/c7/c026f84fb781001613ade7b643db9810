@@ -15,18 +15,18 @@ public class Square implements Shape{
 	
 	@Override
 	public void fillColor(String color) {
-		this.color = color;
+		// fill the method
 	}
 
 	@Override
 	public String getColor() {
-		
-		return color;
+		//fill the method
+		return null;
 	}
 	@Override
 	public double getarea() {
-		double area = sideLength*sideLength;
-		return area;
+		//fill the method
+		return 0;
 	}
 	
 	public String toString(){

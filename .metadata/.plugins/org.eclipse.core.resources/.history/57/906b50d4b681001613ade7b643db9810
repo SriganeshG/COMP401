@@ -22,12 +22,12 @@ public class Circle implements Shape{
 	@Override
 	public String getColor() {
 		//fill the method
-		return color;
+		return null;
 	}
 	@Override
 	public double getarea() {
-		double area = Math.PI * radius * radius;
-		return area;
+		//fill the method
+		return 0;
 	}
 	
 	public String toString(){
