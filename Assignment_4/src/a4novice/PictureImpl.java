@@ -1,6 +1,6 @@
 package a4novice;
 
-public class PictureImpl implements Picture {
+public class PictureImpl extends AnyPicture implements Picture {
 	private int _width;
 	private int _height;
 	private Pixel[][] arrPixels;
@@ -72,6 +72,12 @@ public class PictureImpl implements Picture {
 	public void print() {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public SubPicture extract(int xOffset, int yOffset, int width, int height) {
+		SubPicture subPic = new SubPictureImpl(source, 0, 0, width, height);
+		return subPic;
 	}
 
 }

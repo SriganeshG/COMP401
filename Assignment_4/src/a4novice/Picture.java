@@ -7,4 +7,5 @@ public interface Picture {
 	public Pixel getPixel(int x, int y);
 	public int countRange(double low, double high);
 	public void print();
+	SubPicture extract(int xOffset, int yOffset, int width, int height);
 }

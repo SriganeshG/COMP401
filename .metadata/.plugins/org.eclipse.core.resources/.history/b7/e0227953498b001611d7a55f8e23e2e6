@@ -1,0 +1,10 @@
+package a4novice;
+
+public abstract class AnyPicture {
+	
+	public SubPicture extract(int xOffset, int yOffset, int width, int height) {
+		SubPicture subPic = new SubPictureImpl(source,xOffset,yOffset,width,height);
+		return subPic;
+	}
+	
+}

@@ -1,0 +1,91 @@
+package a4novice;
+
+public class SubPictureImpl implements SubPicture {
+	private int width;
+	private int height;
+	private Picture source;
+	private int xOffset;
+	private int yOffset;
+	private Pixel[][] arrPixels;
+	
+	public SubPictureImpl(Picture source, int xOffset, int yOffset, int width, int height){
+		if(source == null){
+			throw new IllegalArgumentException();
+		}
+		this.width = width;
+		this.height = height;
+		this.source = source;
+		this.xOffset = xOffset;
+		this.yOffset = yOffset;
+		Pixel p = new ColorPixel(.5,.5,.5);
+		arrPixels = new Pixel[height][width];
+		for(int i =0;i<arrPixels.length;i++){
+			for(int j = 0;j<arrPixels[i].length;j++){
+				arrPixels[i][j] = p;
+			}
+		}
+		
+		
+	}
+
+	@Override
+	public int getWidth() {
+		// TODO Auto-generated method stub
+		return width;
+	}
+
+	@Override
+	public int getHeight() {
+		// TODO Auto-generated method stub
+		return height;
+	}
+
+	@Override
+	public void setPixel(int x, int y, Pixel p) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Pixel getPixel(int x, int y) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int countRange(double low, double high) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Picture getSource() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getXOffset() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getYOffset() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public SubPicture extract(int xOffset, int yOffset, int width, int height) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
