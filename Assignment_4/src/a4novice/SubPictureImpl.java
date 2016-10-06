@@ -1,6 +1,6 @@
 package a4novice;
 
-public class SubPictureImpl extends AnyPicture implements SubPicture {
+public class SubPictureImpl implements SubPicture {
 	private int width;
 	private int height;
 	private Picture source;
@@ -22,6 +22,7 @@ public class SubPictureImpl extends AnyPicture implements SubPicture {
 		this.xOffset = xOffset;
 		this.yOffset = yOffset;
 		this.source = source;
+		
 
 	}
 

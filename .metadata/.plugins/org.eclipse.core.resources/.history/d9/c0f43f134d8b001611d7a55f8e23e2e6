@@ -1,0 +1,14 @@
+package a4novice;
+
+public abstract class AnyPicture {
+	private int width;
+	private int height;
+	private Picture source;
+	private int xOffset;
+	private int yOffset;
+	private Pixel[][] arrPixels;
+	
+	
+	public abstract SubPicture extract(int xOffset, int yOffset, int width, int height);
+	
+}

@@ -1,0 +1,36 @@
+package a4novice;
+
+public abstract class AnyPicture {
+	private int width;
+	private int height;
+	private Picture source;
+	private int xOffset;
+	private int yOffset;
+	private Pixel[][] arrPixels;
+	
+	
+	public abstract SubPicture extract(int xOffset, int yOffset, int width, int height);
+	
+	public int getWidth() {
+		return width;
+	}
+	
+	public int getHeight(){
+		return height;
+	}
+	
+	public int countRange(){
+		
+	}
+	
+	public void print(){
+		
+	}
+	
+	
+	
+	public static boolean isBetween(double value, double min, double max) {
+		return ((value >= min) && (value <= max));
+	}
+	
+}
