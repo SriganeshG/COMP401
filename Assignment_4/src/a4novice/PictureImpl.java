@@ -1,19 +1,16 @@
 package a4novice;
 
 public class PictureImpl extends AnyPicture implements Picture {
-	private int width;
-	private int _height;
 	private Pixel[][] arrPixels;
 	
 	
 	public PictureImpl(int width, int height){
 		super(width,height);
-		/*
+		
 		if(width <= 0 || height <=  0){
 			throw new RuntimeException("height or width is 0 or below");
 		}
-		this.width = width;
-		_height = height;
+		
 		Pixel p = new ColorPixel(.5,.5,.5);
 		arrPixels = new Pixel[height][width];
 		for(int i =0;i<arrPixels.length;i++){
@@ -21,7 +18,7 @@ public class PictureImpl extends AnyPicture implements Picture {
 				arrPixels[i][j] = p;
 			}
 		}
-		*/
+		
 	}
 
 	public int getWidth() {
@@ -34,7 +31,7 @@ public class PictureImpl extends AnyPicture implements Picture {
 
 	@Override
 	public void setPixel(int x, int y, Pixel p) {
-		if(x < 0 || x >= width || y < 0 || y >= _height || p == null){
+		if(x < 0 || x >= super.getWidth() || y < 0 || y >= super.getHeight() || p == null){
 			throw new RuntimeException("x,y, or p is not valid.");
 		}
 		
@@ -67,8 +64,9 @@ public class PictureImpl extends AnyPicture implements Picture {
 	
 	@Override
 	public SubPicture extract(int xOffset, int yOffset, int width, int height) {
-		SubPicture subPic = new SubPictureImpl(source, 0, 0, width, height);
+		SubPicture subPic = new SubPictureImpl(this, xOffset, yOffset, width, height);
 		return subPic;
+		//SubPicture subPic = new SubPictureImpl(source, 0, 0, width, height);
 	}
 	
 

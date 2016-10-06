@@ -1,19 +1,19 @@
 package a4novice;
 
-public abstract class AnyPicture {
+public abstract class AnyPicture implements Picture{
 	private int width;
 	private int height;
 	private Picture source;
-	private int xOffset;
-	private int yOffset;
 	private Pixel[][] arrPixels;
 	
 	public AnyPicture(int width, int height){
 		if(width <= 0 || height <=  0){
 			throw new RuntimeException("height or width is 0 or below");
 		}
+		
 		this.width = width;
 		this.height = height;
+		/*
 		Pixel p = new ColorPixel(.5,.5,.5);
 		arrPixels = new Pixel[height][width];
 		for(int i =0;i<arrPixels.length;i++){
@@ -21,6 +21,7 @@ public abstract class AnyPicture {
 				arrPixels[i][j] = p;
 			}
 		}
+		*/
 	}
 	
 	public int countRange(double low, double high) {
@@ -64,8 +65,14 @@ public abstract class AnyPicture {
 		}
 	}
 	
+	public Picture getSource(){
+		return source;
+	}
 	
-	public abstract SubPicture extract(int xOffset, int yOffset, int width, int height);
+	public SubPicture extract(int xOffset, int yOffset, int width, int height) {
+		SubPicture subPic = new SubPictureImpl(this, xOffset, yOffset, width, height);
+		return subPic;
+	}
 	
 	public int getWidth() {
 		return width;
