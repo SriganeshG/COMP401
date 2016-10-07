@@ -69,6 +69,8 @@ public abstract class AnyPicture implements Picture{
 		return source;
 	}
 	
+	
+	
 	public SubPicture extract(int xOffset, int yOffset, int width, int height) {
 		SubPicture subPic = new SubPictureImpl(this, xOffset, yOffset, width, height);
 		return subPic;

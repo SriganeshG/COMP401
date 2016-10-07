@@ -1,0 +1,24 @@
+package a4adept;
+
+public class HorizontalStackPicture extends AnyPicture implements Picture {
+	private Picture p1;
+	private Picture p2;
+	private Picture pFinal;
+	public HorizontalStackPicture(Picture left, Picture right){
+		
+		p1 = left;
+		p2 = right;
+		pFinal = new PictureImpl(p1.getWidth()+p2.getWidth(),p1.getHeight());
+	}
+	@Override
+	public void setPixel(int x, int y, Pixel p) {
+		
+		
+	}
+	@Override
+	public Pixel getPixel(int x, int y) {
+		
+		return null;
+	}
+
+}

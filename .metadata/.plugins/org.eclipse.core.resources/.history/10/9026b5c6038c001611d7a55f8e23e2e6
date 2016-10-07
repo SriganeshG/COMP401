@@ -1,0 +1,10 @@
+package a4adept;
+
+public class HorizontalStackPicture extends AnyPicture implements Picture {
+
+	public HorizontalStackPicture(Picture left, Picture right){
+		
+		
+	}
+
+}
