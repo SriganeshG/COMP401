@@ -1,42 +1,32 @@
 package a4jedi;
 
-public abstract class AnyPicture implements Picture{
+public abstract class AnyPicture implements Picture {
 	private int width;
 	private int height;
 	private Picture source;
 	private Pixel[][] arrPixels;
-	
-	public AnyPicture(int width, int height){
-		if(width <= 0 || height <=  0){
+
+	public AnyPicture(int width, int height) {
+		if (width <= 0 || height <= 0) {
 			throw new RuntimeException("height or width is 0 or below");
 		}
-		
 		this.width = width;
 		this.height = height;
-		/*
-		Pixel p = new ColorPixel(.5,.5,.5);
-		arrPixels = new Pixel[height][width];
-		for(int i =0;i<arrPixels.length;i++){
-			for(int j = 0;j<arrPixels[i].length;j++){
-				arrPixels[i][j] = p;
-			}
-		}
-		*/
 	}
-	
+
 	public int countRange(double low, double high) {
-		int sum =0;
-		for(int i = 0; i < arrPixels.length;i++){
-			for(int j = 0; j < arrPixels[i].length;j++){
-				if(arrPixels[i][j].getIntensity() >= low && arrPixels[i][j].getIntensity() <= high){
+		int sum = 0;
+		for (int i = 0; i < arrPixels.length; i++) {
+			for (int j = 0; j < arrPixels[i].length; j++) {
+				if (arrPixels[i][j].getIntensity() >= low && arrPixels[i][j].getIntensity() <= high) {
 					sum++;
 				}
 			}
 		}
 		return sum;
 	}
-	
-	public void print(){
+
+	public void print() {
 		for (int j = 0; j < height; j++) {
 			for (int i = 0; i < width; i++) {
 				if (isBetween(arrPixels[i][j].getIntensity(), 0, 9)) {
@@ -61,29 +51,31 @@ public abstract class AnyPicture implements Picture{
 					System.out.print(" ");
 				}
 			}
-			//System.out.print("\n");
+			// System.out.print("\n");
 		}
 	}
-	
-	public Picture getSource(){
+
+	public Picture getSource() {
 		return source;
 	}
-	
+
 	public SubPicture extract(int xOffset, int yOffset, int width, int height) {
-		SubPicture subPic = new SubPictureImpl(this, xOffset, yOffset, width, height);
-		return subPic;
+		return new SubPictureImpl(this, xOffset, yOffset, width, height);
 	}
-	
+
 	public int getWidth() {
 		return width;
 	}
-	
-	public int getHeight(){
+
+	public int getHeight() {
 		return height;
 	}
-	
+
 	public static boolean isBetween(double value, double min, double max) {
 		return ((value >= min) && (value <= max));
 	}
-	
+
+	public TransformedPicture transform(PixelTransformation xform) {
+		return new TransformedPicture(this, xform);
+	}
 }

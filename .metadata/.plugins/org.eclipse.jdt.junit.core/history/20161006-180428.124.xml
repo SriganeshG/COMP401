@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="A4NoviceTest" project="Assignment_4" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="a4test.A4NoviceTest" time="0.0">
-    <testcase name="testSubPictureConstructorBasic" classname="a4test.A4NoviceTest" time="0.0"/>
-    <testcase name="testExtract" classname="a4test.A4NoviceTest" time="0.0"/>
-    <testcase name="testSubPictureImplPixelGettersAndSetters" classname="a4test.A4NoviceTest" time="0.0"/>
-    <testcase name="testSubPictureConstructorExceptions" classname="a4test.A4NoviceTest" time="0.0"/>
-  </testsuite>
-</testrun>

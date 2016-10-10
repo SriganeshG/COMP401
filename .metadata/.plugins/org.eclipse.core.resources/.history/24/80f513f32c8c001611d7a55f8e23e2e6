@@ -1,0 +1,11 @@
+package a4jedi;
+
+public class Threshold implements PixelTransformation {
+
+	@Override
+	public Pixel Transform(Pixel p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
