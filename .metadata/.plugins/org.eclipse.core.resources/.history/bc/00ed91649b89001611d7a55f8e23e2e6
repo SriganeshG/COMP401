@@ -1,5 +1,0 @@
-package a4novice;
-
-public interface SubPicture extends Picture {
-
-}

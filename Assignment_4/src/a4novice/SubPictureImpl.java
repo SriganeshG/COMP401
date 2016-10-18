@@ -25,14 +25,6 @@ public class SubPictureImpl extends AnyPicture implements SubPicture {
 		
 	}
 
-	public int getWidth() {
-		return super.getWidth();
-	}
-
-	public int getHeight() {
-		return super.getHeight();
-	}
-
 	@Override
 	public void setPixel(int x, int y, Pixel p) {
 		source.setPixel(xOffset + x, yOffset + y, p);
@@ -41,16 +33,6 @@ public class SubPictureImpl extends AnyPicture implements SubPicture {
 	@Override
 	public Pixel getPixel(int x, int y) {
 		return source.getPixel(x + xOffset, y + yOffset);
-	}
-
-	@Override
-	public int countRange(double low, double high) {
-		return super.countRange(low, high);
-	}
-
-	@Override
-	public void print() {
-		super.print();
 	}
 
 	@Override
@@ -66,11 +48,6 @@ public class SubPictureImpl extends AnyPicture implements SubPicture {
 	@Override
 	public int getYOffset() {
 		return yOffset;
-	}
-
-	@Override
-	public SubPicture extract(int xOffset, int yOffset, int width, int height) {
-		return super.extract(xOffset, yOffset, width, height);
 	}
 
 }

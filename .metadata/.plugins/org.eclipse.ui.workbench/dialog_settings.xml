@@ -36,6 +36,7 @@
 	<section name="ZipFileImportWizard">
 		<item value="false" key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\Hail Sri\Downloads\a5-setup.jar"/>
 			<item value="C:\Users\Hail Sri\Downloads\a4-tests.jar"/>
 			<item value="C:\Users\Hail Sri\Downloads\a4-setup.jar"/>
 			<item value="C:\Users\Hail Sri\Downloads\a3tests.jar"/>

@@ -20,14 +20,6 @@ public class PictureImpl extends AnyPicture implements Picture {
 
 	}
 
-	public int getWidth() {
-		return super.getWidth();
-	}
-
-	public int getHeight() {
-		return super.getHeight();
-	}
-
 	@Override
 	public void setPixel(int x, int y, Pixel p) {
 		if (x < 0 || x >= super.getWidth() || y < 0 || y >= super.getHeight() || p == null) {
@@ -51,21 +43,6 @@ public class PictureImpl extends AnyPicture implements Picture {
 		}
 		return arrPixels[x][y];
 
-	}
-
-	public int countRange(double low, double high) {
-		return super.countRange(low, high);
-	}
-
-	public void print() {
-		super.print();
-	}
-
-	@Override
-	public SubPicture extract(int xOffset, int yOffset, int width, int height) {
-
-		SubPicture subPic = new SubPictureImpl(this, xOffset, yOffset, width, height);
-		return subPic;
 	}
 
 }

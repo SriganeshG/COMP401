@@ -13,15 +13,6 @@ public abstract class AnyPicture implements Picture{
 		
 		this.width = width;
 		this.height = height;
-		/*
-		Pixel p = new ColorPixel(.5,.5,.5);
-		arrPixels = new Pixel[height][width];
-		for(int i =0;i<arrPixels.length;i++){
-			for(int j = 0;j<arrPixels[i].length;j++){
-				arrPixels[i][j] = p;
-			}
-		}
-		*/
 	}
 	
 	public int countRange(double low, double high) {
