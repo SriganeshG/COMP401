@@ -1,4 +1,4 @@
-package a6novice;
+package a6adept;
 
 public interface Picture extends Iterable<Pixel> {
 	public int getWidth();

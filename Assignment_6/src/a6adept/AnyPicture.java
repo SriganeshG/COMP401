@@ -1,4 +1,4 @@
-package a6novice;
+package a6adept;
 
 public abstract class AnyPicture implements Picture{
 	private int width;

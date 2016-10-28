@@ -1,0 +1,4 @@
+3
+Carrie Brownstein 3.5 4.0 3.2 3.7 3.5
+Corin Tucker 3.8 3.8 3.1 2.5 3.6
+Janet Weiss 2.1 2.2 1.5 1.8 2.0

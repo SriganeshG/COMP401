@@ -13,17 +13,6 @@ public abstract class AnyPicture implements Picture{
 		this.height = height;
 	}
 	
-	public abstract void setPixel(int x, int y, Pixel p);
-	public abstract Pixel getPixel(int x, int y);
-	
-	public Pixel getPixel(Coordinate c){
-		return getPixel(c.getX(),c.getY());
-	}
-	
-	public void setPixel(Coordinate c, Pixel p){
-		setPixel(c.getX(),c.getY(),p);
-	}
-	
 	public int countRange(double low, double high) {
 		int sum =0;
 		for(int i = 0; i < this.getWidth();i++){
@@ -78,8 +67,9 @@ public abstract class AnyPicture implements Picture{
 		int minY = corner_a.getY() < corner_b.getY() ? corner_a.getY() : corner_b.getY();
 		int maxX = corner_a.getX() >= corner_b.getX() ? corner_a.getX() : corner_b.getX();
 		int maxY = corner_a.getY() >= corner_b.getY() ? corner_a.getY() : corner_b.getY();
-		return this.extract(minX, minY, maxX-minX, maxY-minY);
+		return this.extract(minX, minY, maxX, maxY);
 	}
+	
 	public int getWidth() {
 		return this.width;
 	}
