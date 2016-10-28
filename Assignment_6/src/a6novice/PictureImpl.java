@@ -36,12 +36,12 @@ public class PictureImpl extends AnyPicture implements Picture {
 
 	}
 
-	@Override
+	
 	public Pixel getPixel(int x, int y) {
 		if (x < 0 || y < 0) {
 			throw new RuntimeException("x or y less than 0");
 		}
-		return arrPixels[x][y];
+		return this.arrPixels[x][y];
 
 	}
 

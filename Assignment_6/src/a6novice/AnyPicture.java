@@ -1,95 +1,108 @@
 package a6novice;
-
-public abstract class AnyPicture implements Picture{
+import java.util.*;
+public abstract class AnyPicture implements Picture {
 	private int width;
 	private int height;
-	
-	public AnyPicture(int width, int height){
-		if(width <= 0 || height <=  0){
+	private Picture source;
+	private Pixel[][] arrPixels;
+
+	public AnyPicture(int width, int height) {
+		if (width <= 0 || height <= 0) {
 			throw new RuntimeException("height or width is 0 or below");
 		}
-		
+
 		this.width = width;
 		this.height = height;
+		/*
+		 * Pixel p = new ColorPixel(.5,.5,.5); arrPixels = new
+		 * Pixel[height][width]; for(int i =0;i<arrPixels.length;i++){ for(int j
+		 * = 0;j<arrPixels[i].length;j++){ arrPixels[i][j] = p; } }
+		 */
 	}
-	
-	public abstract void setPixel(int x, int y, Pixel p);
-	public abstract Pixel getPixel(int x, int y);
-	
-	public Pixel getPixel(Coordinate c){
-		return getPixel(c.getX(),c.getY());
-	}
-	
-	public void setPixel(Coordinate c, Pixel p){
-		setPixel(c.getX(),c.getY(),p);
-	}
-	
+
 	public int countRange(double low, double high) {
-		int sum =0;
-		for(int i = 0; i < this.getWidth();i++){
-			for(int j = 0; j < this.getHeight();j++){
-				double intensity = this.getPixel(i, j).getIntensity();
-				if((intensity <= high)&&(intensity>=low)){
+		int sum = 0;
+		for (int i = 0; i < arrPixels.length; i++) {
+			for (int j = 0; j < arrPixels[i].length; j++) {
+				if (arrPixels[i][j].getIntensity() >= low && arrPixels[i][j].getIntensity() <= high) {
 					sum++;
 				}
 			}
 		}
 		return sum;
 	}
-	
-	public void print(){
+
+	public void print() {
 		for (int j = 0; j < height; j++) {
 			for (int i = 0; i < width; i++) {
-				if (isBetween(this.getPixel(i, j).getIntensity(), 0, 9)) {
+				if (isBetween(arrPixels[i][j].getIntensity(), 0, 9)) {
 					System.out.print("#");
-				} else if (isBetween(this.getPixel(i,j).getIntensity(), 10, 19)) {
+				} else if (isBetween(arrPixels[i][j].getIntensity(), 10, 19)) {
 					System.out.print("M");
-				} else if (isBetween(this.getPixel(i,j).getIntensity(), 20, 29)) {
+				} else if (isBetween(arrPixels[i][j].getIntensity(), 20, 29)) {
 					System.out.print("X");
-				} else if (isBetween(this.getPixel(i,j).getIntensity(), 30, 39)) {
+				} else if (isBetween(arrPixels[i][j].getIntensity(), 30, 39)) {
 					System.out.print("D");
-				} else if (isBetween(this.getPixel(i,j).getIntensity(), 40, 49)) {
+				} else if (isBetween(arrPixels[i][j].getIntensity(), 40, 49)) {
 					System.out.print("<");
-				} else if (isBetween(this.getPixel(i,j).getIntensity(), 50, 59)) {
+				} else if (isBetween(arrPixels[i][j].getIntensity(), 50, 59)) {
 					System.out.print(">");
-				} else if (isBetween(this.getPixel(i,j).getIntensity(), 60, 69)) {
+				} else if (isBetween(arrPixels[i][j].getIntensity(), 60, 69)) {
 					System.out.print("s");
-				} else if (isBetween(this.getPixel(i,j).getIntensity(), 70, 79)) {
+				} else if (isBetween(arrPixels[i][j].getIntensity(), 70, 79)) {
 					System.out.print(":");
-				} else if (isBetween(this.getPixel(i,j).getIntensity(), 80, 89)) {
+				} else if (isBetween(arrPixels[i][j].getIntensity(), 80, 89)) {
 					System.out.print("-");
-				} else if (isBetween(this.getPixel(i,j).getIntensity(), 90, 99)) {
+				} else if (isBetween(arrPixels[i][j].getIntensity(), 90, 99)) {
 					System.out.print(" ");
 				}
 			}
-			//System.out.print("\n");
+			// System.out.print("\n");
 		}
 	}
-	
-	
+
+	public Picture getSource() {
+		return source;
+	}
+
+	public void setPixel(Coordinate c, Pixel p) {
+		setPixel(c.getX(), c.getY(), p);
+	}
+
+	public Pixel getPixel(Coordinate c) {
+		return getPixel(c.getX(), c.getY());
+	}
+
 	public SubPicture extract(int xOffset, int yOffset, int width, int height) {
 		SubPicture subPic = new SubPictureImpl(this, xOffset, yOffset, width, height);
 		return subPic;
 	}
 	
-	public SubPicture extract(Coordinate corner_a, Coordinate corner_b){
-		
-		int minX = corner_a.getX() < corner_b.getX() ? corner_a.getX() : corner_b.getX();
-		int minY = corner_a.getY() < corner_b.getY() ? corner_a.getY() : corner_b.getY();
-		int maxX = corner_a.getX() >= corner_b.getX() ? corner_a.getX() : corner_b.getX();
-		int maxY = corner_a.getY() >= corner_b.getY() ? corner_a.getY() : corner_b.getY();
-		return this.extract(minX, minY, maxX-minX, maxY-minY);
-	}
+	public SubPicture extract(Coordinate corner_a, Coordinate corner_b)
+	  {
+	    int minX = corner_a.getX() < corner_b.getX() ? corner_a.getX() : corner_b.getX();
+	    int minY = corner_a.getY() < corner_b.getY() ? corner_a.getY() : corner_b.getY();
+	    int maxY = corner_a.getY() >= corner_b.getY() ? corner_a.getY() : corner_b.getY();
+	    int maxX = corner_a.getX() >= corner_b.getX() ? corner_a.getX() : corner_b.getX();
+
+	    return extract(minX, minY, maxX - minX + 1, maxY - minY + 1);
+	  }
+
 	public int getWidth() {
-		return this.width;
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
 	}
 	
-	public int getHeight(){
-		return this.height;
-	}
-	
+	public Iterator<Pixel> iterator()
+	  {
+	    return new RowMajorPixelIterator(this);
+	  }
+
 	public static boolean isBetween(double value, double min, double max) {
 		return ((value >= min) && (value <= max));
 	}
-	
+
 }

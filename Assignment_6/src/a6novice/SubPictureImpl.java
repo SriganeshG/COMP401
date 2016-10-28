@@ -25,29 +25,29 @@ public class SubPictureImpl extends AnyPicture implements SubPicture {
 		
 	}
 
-	@Override
+	
 	public void setPixel(int x, int y, Pixel p) {
-		source.setPixel(xOffset + x, yOffset + y, p);
+		this.source.setPixel(this.xOffset + x, this.yOffset + y, p);
 	}
 
-	@Override
+	
 	public Pixel getPixel(int x, int y) {
-		return source.getPixel(x + xOffset, y + yOffset);
+		return source.getPixel(x + this.xOffset, y + this.yOffset);
 	}
 
 	@Override
 	public Picture getSource() {
-		return source;
+		return this.source;
 	}
 
 	@Override
 	public int getXOffset() {
-		return xOffset;
+		return this.xOffset;
 	}
 
 	@Override
 	public int getYOffset() {
-		return yOffset;
+		return this.yOffset;
 	}
 
 }
