@@ -1,4 +1,4 @@
-package a6novice;
+package a6adept;
 import java.util.*;
 
 public class RowMajorPixelIterator implements Iterator<Pixel>{

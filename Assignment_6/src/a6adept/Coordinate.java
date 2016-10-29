@@ -1,4 +1,4 @@
-package a6novice;
+package a6adept;
 
 public class Coordinate {
 

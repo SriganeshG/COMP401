@@ -1,4 +1,4 @@
-package a6novice;
+package a6adept;
 
 public class PictureImpl extends AnyPicture implements Picture {
 	private Pixel[][] arrPixels;
@@ -36,7 +36,6 @@ public class PictureImpl extends AnyPicture implements Picture {
 			throw new RuntimeException("x or y less than 0");
 		}
 		return this.arrPixels[x][y];
-
 	}
 
 }

@@ -1,4 +1,4 @@
-package a6novice;
+package a6adept;
 
 public class SubPictureImpl extends AnyPicture implements SubPicture {
 	private Picture source;
@@ -17,8 +17,7 @@ public class SubPictureImpl extends AnyPicture implements SubPicture {
 		if (source == null) {
 			throw new IllegalArgumentException();
 		} else if ((xOffset + width) > source.getWidth()) {
-			throw new IllegalArgumentException();
-		} else if ((yOffset + height) > source.getHeight()) {
+ 		} else if ((yOffset + height) > source.getHeight()) {
 			throw new IllegalArgumentException();
 		}
 		

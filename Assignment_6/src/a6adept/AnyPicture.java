@@ -1,5 +1,7 @@
-package a6novice;
+package a6adept;
+
 import java.util.*;
+
 public abstract class AnyPicture implements Picture {
 	private int width;
 	private int height;
@@ -88,9 +90,29 @@ public abstract class AnyPicture implements Picture {
 		return height;
 	}
 
-	
-	public Iterator<Pixel> iterator(){
+	public Iterator<Pixel> iterator() {
 		return new RowMajorPixelIterator(this);
+	}
+
+	public Iterator<Pixel> sample(int init_x, int init_y, int dx, int dy) {
+		if ((init_x < 0) || (init_y < 0) || (init_x >= getWidth()) || (init_y >= getHeight())) {
+			throw new IllegalArgumentException("Initial x and y of sampling must be within picture");
+		}
+		if ((dx < 0) || (dy < 0)) {
+			throw new IllegalArgumentException("dx and dy must be positive");
+		}
+		return new Sample(this, init_x,init_y,dx,dy);
+	}
+	
+	
+	public Iterator<SubPicture> window(int window_width, int window_height){
+		
+		return new Window(this,window_width,window_height);
+	}
+	
+	public Iterator<SubPicture> tile(int tile_width, int tile_height){
+		
+		return new Tile(this,tile_width,tile_height);
 	}
 
 	public static boolean isBetween(double value, double min, double max) {

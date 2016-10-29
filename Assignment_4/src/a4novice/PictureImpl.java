@@ -26,13 +26,8 @@ public class PictureImpl extends AnyPicture implements Picture {
 			throw new RuntimeException("x,y, or p is not valid.");
 		}
 
-		for (int i = 0; i < arrPixels.length; i++) {
-			for (int j = 0; j < arrPixels[i].length; j++) {
-				if (i == x && y == j) {
-					arrPixels[i][j] = p;
-				}
-			}
-		}
+		
+					arrPixels[x][y] = p;
 
 	}
 
