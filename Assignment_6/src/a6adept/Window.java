@@ -25,13 +25,15 @@ public class Window implements Iterator<SubPicture> {
 		if (hasNext() == false) {
 			throw new NoSuchElementException("windows are out");
 		}
-		//Pixel p = this.p.getPixel(x, y);
+		// Pixel p = this.p.getPixel(x, y);
+		Coordinate c1 = new Coordinate(x, y);
+		Coordinate c2 = new Coordinate(p.getWidth() + c1.getX() - 1, p.getHeight() + c1.getY() - 1);
 		x += 1;
-		if (x >= window_width) {
+		if (x >= p.getWidth() - window_width) {
 			x = 0;
 			y += 1;
 		}
-		
-		return p.extract(x, y, window_width, window_height);
+
+		return p.extract(c1, c2);
 	}
 }
