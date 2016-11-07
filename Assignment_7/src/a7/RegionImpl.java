@@ -25,6 +25,7 @@ public class RegionImpl implements Region {
 
 	@Override
 	public int getTop() {
+		//
 		return a.getY() > b.getY() ? b.getY() : a.getY();
 	}
 
