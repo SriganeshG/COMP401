@@ -8,15 +8,6 @@ public class RegionImpl implements Region {
 		if (a == null || b == null) {
 			throw new IllegalArgumentException();
 		}
-		// checks to see what is upperleft or bottomright.
-		// greater x & y values -> lower and more to the right
-		// if (a.getX() >= b.getX() && a.getY() >= b.getY()) {
-		// br = a;
-		// ul = b;
-		// } else {
-		// br = b;
-		// ul = a;
-		// }
 		this.a = a;
 		this.b = b;
 
