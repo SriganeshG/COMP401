@@ -19,7 +19,7 @@ public class SimplePictureViewWidget extends JPanel implements MouseListener {
 		add(picture_view, BorderLayout.CENTER);
 		
 		JLabel title_label = new JLabel(title);
-		add(title_label, BorderLayout.WEST);
+		add(title_label, BorderLayout.SOUTH);
 	}
 
 	@Override
