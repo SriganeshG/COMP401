@@ -164,5 +164,7 @@ public class ImageAdjustor extends JPanel implements ChangeListener {
 
 		return copy;
 	}
+	
+	
 
 }

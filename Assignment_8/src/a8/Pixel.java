@@ -6,5 +6,8 @@ public interface Pixel {
 	public double getBlue();
 	public double getGreen();
 	public double getIntensity();
-	public char getChar();	
+	public char getChar();
+	Pixel blend(Pixel p, double weight);
+	Pixel lighten(double factor);
+	Pixel darken(double factor);	
 }

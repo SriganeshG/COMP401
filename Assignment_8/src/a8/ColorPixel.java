@@ -55,4 +55,25 @@ public class ColorPixel implements Pixel {
 		int char_idx = (int) (getIntensity()*10.0);
 		return PIXEL_CHAR_MAP[char_idx];
 	}
+	
+	@Override
+	public Pixel blend(Pixel p, double weight) {
+		double r = getRed(), g = getGreen(), b = getBlue();
+		r = (this.getRed() * weight) + (p.getRed() * (1 - weight));
+		g = (this.getGreen() * weight) + (p.getGreen() * (1 - weight));
+		b = (this.getBlue() * weight) + (p.getBlue() * (1 - weight));
+		return new ColorPixel(r, g, b);
+	}
+
+	@Override
+	public Pixel lighten(double factor) {
+		Pixel whitePixel = new ColorPixel(1.0, 1.0, 1.0);
+		return blend(whitePixel, 1 - factor);
+	}
+
+	@Override
+	public Pixel darken(double factor) {
+		Pixel blackPixel = new ColorPixel(0.0, 0.0, 0.0);
+		return blend(blackPixel, 1 - factor);
+	}
 }
