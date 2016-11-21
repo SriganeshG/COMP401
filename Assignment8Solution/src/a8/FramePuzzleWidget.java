@@ -27,14 +27,12 @@ public class FramePuzzleWidget extends JPanel implements MouseListener, KeyListe
 		singleHeight = picture.getHeight() / 5;
 		emptyX = 4;
 		emptyY = 4;
-
 		for (int x = 0; x < 5; x++) {
 			for (int y = 0; y < 5; y++) {
 				Picture extraction = picture.extract(x * singleWidth, y * singleHeight, singleWidth, singleHeight);
 				pictureGrid[x][y] = extraction;
 			}
 		}
-
 		empty = new PictureImpl(singleWidth, singleHeight);
 		// Initialize empty square to green
 		for (int x = 0; x < empty.getWidth(); x++) {
